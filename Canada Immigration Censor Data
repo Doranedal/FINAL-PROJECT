@@ -1,0 +1,71 @@
+tkinter
+from tkinter import ttk
+from tkcalendar import Calendar
+from matplotlib import pyplot as plt
+
+
+
+
+window=tkinter.Tk()
+window.title('CANADA IMMIGRANTS CENSOR DATA FORM')
+
+frame=tkinter.Frame(window)
+frame.pack()
+
+immigrantcensorframe=tkinter.LabelFrame(frame, text='Canada Immigrant form entry')
+immigrantcensorframe.grid(row=0, column=0)
+
+fnamelabel=tkinter.Label(immigrantcensorframe, text='First Name')
+fnamelabel.grid(row=0, column=0)
+fnameentry=tkinter.Entry(immigrantcensorframe)
+fnameentry.grid(row=0, column=1)
+
+lnamelabel=tkinter.Label(immigrantcensorframe, text='Last Name')
+lnamelabel.grid(row=0, column=2)
+lnameentry=tkinter.Entry(immigrantcensorframe)
+fnameentry.grid(row=0, column=3)
+
+agelabel=tkinter.Label(immigrantcensorframe, text='Age')
+agespinbox=tkinter.Spinbox(immigrantcensorframe, from_=0 , to=100)
+agelabel.grid(row=0, column=4)
+agespinbox.grid(row=0, column=5)
+
+doblabel=tkinter.Label(immigrantcensorframe, text='Date of Birth(mm/dd/yy):',bg='#0055fe',fg='white',font=('yu gothic ui',13, 'bold'))
+doblabel.grid(row=0, column=6)
+dobentry=tkinter.Entry(immigrantcensorframe,highlightthickness=0, relief='flat',bg='white',fg='#6b6a69',font=('yu gothic ui',11, 'bold'))
+dobentry.grid(row=0, column=7)
+
+sexlabel=tkinter.Label(immigrantcensorframe, text='Sex')
+sexlabel.grid(row=1, column=0)
+sexcombo=ttk.Combobox(immigrantcensorframe, values=['Female','Male'])
+sexcombo.grid(row=1, column=1)
+
+countryoriginlabel=tkinter.Label(immigrantcensorframe,text='Country of Origin')
+countryoriginlabel.grid(row=1, column=2)
+countryorigincombo=ttk.Combobox(immigrantcensorframe,values=['Afghanistan', 'Aland Islands', 'Albania', 'Algeria', 'American Samoa', 'Andorra', 'Angola', 'Anguilla', 'Antarctica', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia, Plurinational State of', 'Bonaire, Sint Eustatius and Saba', 'Bosnia and Herzegovina', 'Botswana', 'Bouvet Island', 'Brazil', 'British Indian Ocean Territory', 'Brunei Darussalam', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Cayman Islands', 'Central African Republic', 'Chad', 'Chile', 'China', 'Christmas Island', 'Cocos (Keeling) Islands', 'Colombia', 'Comoros', 'Congo', 'Congo, The Democratic Republic of the', 'Cook Islands', 'Costa Rica', "Côte d'Ivoire", 'Croatia', 'Cuba', 'Curaçao', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia', 'Falkland Islands (Malvinas)', 'Faroe Islands', 'Fiji', 'Finland', 'France', 'French Guiana', 'French Polynesia', 'French Southern Territories', 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Gibraltar', 'Greece', 'Greenland', 'Grenada', 'Guadeloupe', 'Guam', 'Guatemala', 'Guernsey', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Heard Island and McDonald Islands', 'Holy See (Vatican City State)', 'Honduras', 'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran, Islamic Republic of', 'Iraq', 'Ireland', 'Isle of Man', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jersey', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', "Korea, Democratic People's Republic of", 'Korea, Republic of', 'Kuwait', 'Kyrgyzstan', "Lao People's Democratic Republic", 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macao', 'Macedonia, Republic of', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Martinique', 'Mauritania', 'Mauritius', 'Mayotte', 'Mexico', 'Micronesia, Federated States of', 'Moldova, Republic of', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco', 'Mozambique', 'Myanmar', 'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'New Caledonia', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Niue', 'Norfolk Island', 'Northern Mariana Islands', 'Norway', 'Oman', 'Pakistan', 'Palau', 'Palestinian Territory, Occupied', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Pitcairn', 'Poland', 'Portugal', 'Puerto Rico', 'Qatar', 'Réunion', 'Romania', 'Russian Federation', 'Rwanda', 'Saint Barthélemy', 'Saint Helena, Ascension and Tristan da Cunha', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Martin (French part)', 'Saint Pierre and Miquelon', 'Saint Vincent and the Grenadines', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Sint Maarten (Dutch part)', 'Slovakia', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'South Georgia and the South Sandwich Islands', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'South Sudan', 'Svalbard and Jan Mayen', 'Swaziland', 'Sweden', 'Switzerland', 'Syrian Arab Republic', 'Taiwan, Province of China', 'Tajikistan', 'Tanzania, United Republic of', 'Thailand', 'Timor-Leste', 'Togo', 'Tokelau', 'Tonga', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks and Caicos Islands', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'United States Minor Outlying Islands', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Venezuela, Bolivarian Republic of', 'Viet Nam', 'Virgin Islands, British', 'Virgin Islands, U.S.', 'Wallis and Futuna', 'Yemen', 'Zambia', 'Zimbabwe'])
+countryorigincombo.grid(row=1,column=3)
+
+ethnicitylabel=tkinter.Label(immigrantcensorframe,text='Ethnicity')
+ethnicitycombo=ttk.Combobox(immigrantcensorframe,values=['American Indian','Asian','Native Hawaiian or other pacific islander','Black or African American','white','I do not wish to provide this information'])
+ethnicitylabel.grid(row=1, column=4)
+ethnicitycombo.grid(row=1, column=5)
+
+entrydatelabel=tkinter.Label(immigrantcensorframe, text= 'Entry Date(mm/dd/yy)')
+entrydatelabel.grid(row=2, column=0)
+entrydateentry=tkinter.Entry(immigrantcensorframe)
+entrydateentry.grid(row=2, column=1)
+
+languagelabel=tkinter.Label(immigrantcensorframe, text='Language')
+languagelabel.grid(row=3, column=0)
+languageentry=tkinter.Entry(immigrantcensorframe)
+languageentry.grid(row=3, column=1)
+
+visatypelabel=tkinter.Label(immigrantcensorframe, text='Visatype')
+visatypelabel.grid(row=4, column=1)
+visatypecombo=ttk.Combobox(immigrantcensorframe, values=['Business visa','Courtesy Visa','Diplomatic Visa','Facilitation visa','General visa','Open work permit','Quebec skilled worker','Temporary visa'])
+visatypecombo.grid(row=4, column=2)
+
+
+
+
+window.mainloop()
